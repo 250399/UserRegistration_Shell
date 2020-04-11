@@ -32,4 +32,5 @@ else
 	noFlag=invalid
 fi
 
-[ "$noFlag" = "valid" ] && echo PhoneNumber is vlaid ||echo Invalid Pno
+[ "$noFlag" = "valid" ] && echo PhoneNumber is vlaid ||echo Invalid Pno 
+read -sp"Enter password : " password
