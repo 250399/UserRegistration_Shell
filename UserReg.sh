@@ -1,4 +1,5 @@
-#!/bin/bash
+echo Welcome User Registration program
 
 
-echo Welcome to User Registration
+read -p"Enter User name :" user
+[[ $user =~ ^[A-Z@][a-z]{2,} ]] && echo Valid || echo Invalid
