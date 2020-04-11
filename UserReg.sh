@@ -25,12 +25,17 @@ read -p"Enter Phone No :" pno
 countryCode=`echo $pno | awk '{ print $1 }'`
 phoneNo=`echo $pno | awk '{ print $2 }'`
 noFlag=valid
-if [[ $countryCode =~ [0-9]{2} ]]
+if [[ $countryCode =~ ^[0-9]{2}$ ]]
 then
-	[[ $phoneNo =~ [0-9]{10} ]] && : || noFlag=In
+	[[ $phoneNo =~ ^[0-9]{10}$ ]] && : || noFlag=In
 else
 	noFlag=invalid
 fi
 
 [ "$noFlag" = "valid" ] && echo PhoneNumber is vlaid ||echo Invalid Pno 
 read -sp"Enter password : " password
+if [[ ${#password} -ge 8 && "$password" == *[[:upper:]]* ]]
+then
+	echo valid
+else
+	echo invalid
